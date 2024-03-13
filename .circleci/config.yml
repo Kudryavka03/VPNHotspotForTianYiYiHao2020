@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@2.3.0
+
+jobs:
+  test:
+    executor:
+      name: android/android-docker
+      tag: 2023.10.1
+      resource-class: large
+    steps:
+      - checkout
+      - android/restore-gradle-cache
+      - run:
+          name: Run Build and Tests
+          command: ./gradlew assembleDebug check --no-daemon
+      - android/save-gradle-cache
+      - store_artifacts:
+          path: mobile/build/outputs/apk
+          destination: apk
+      - store_artifacts:
+          path: mobile/build/reports
+          destination: reports
+
+workflows:
+  test:
+    jobs:
+      - test
