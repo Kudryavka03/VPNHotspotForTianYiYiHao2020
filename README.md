@@ -1,8 +1,13 @@
 MacroDroid 宏是Intent，广播
+
 Action：be.mygod.vpnhotspot.USB_TETHER_START
+
 Package:be.mygod.vpnhotspot
+
 先启动Application，等待3秒后再发送Intent。
-参照这里改的：[![Here](https://github.com/Swap-File/VPNHotspot/commit/a4024d2a2306aa3d3842d29ec513b8d9358179dc)]
+
+参照这里改的：https://github.com/Swap-File/VPNHotspot/commit/a4024d2a2306aa3d3842d29ec513b8d9358179dc
+
 Thanks！
 
 
